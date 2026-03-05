@@ -1,0 +1,157 @@
+/* =========================================
+   ORTAK INNER HERO (Tüm İç Sayfalar)
+========================================= */
+
+.inner-hero {
+    padding: 120px 0 90px;
+    background: linear-gradient(180deg, #fafafa 0%, #f3f3f3 100%);
+    text-align: center;
+    position: relative;
+}
+
+.inner-hero .container {
+    max-width: 900px;
+}
+
+/* Breadcrumb */
+
+.inner-hero .breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.inner-hero .breadcrumb a,
+.inner-hero .breadcrumb a:visited {
+    color: #e20015;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.inner-hero .breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.inner-hero .breadcrumb span {
+    margin: 0 6px;
+}
+
+/* Icon */
+
+.inner-hero .hero-icon {
+    font-size: 26px;
+    color: #e20015;
+    margin-bottom: 18px;
+}
+
+/* Title */
+
+.inner-hero h1 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: -0.3px;
+}
+
+/* Subtitle */
+
+.inner-hero .hero-subtitle {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Alt Bosch çizgisi */
+
+.inner-hero::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: #e30613;
+    display: block;
+    margin: 35px auto 0;
+    border-radius: 2px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .inner-hero {
+        padding: 100px 20px 70px;
+    }
+
+    .inner-hero h1 {
+        font-size: 28px;
+    }
+
+    .inner-hero .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .inner-hero .hero-icon {
+        font-size: 22px;
+    }
+}
+.inner-hero {
+    position: relative;
+}
+.scroll-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+
+    background: #ffffff;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 1.6s infinite;
+}
+
+.scroll-icon i {
+    color: #e20015;
+    font-size: 18px;
+}
+
+.scroll-icon:hover {
+    transform: translateX(-50%) scale(1.08);
+    box-shadow: 0 22px 45px rgba(0,0,0,0.20);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}
+
+@media (max-width: 768px) {
+
+    .inner-hero .scroll-icon {
+        width: 42px;
+        height: 42px;
+        bottom:10px;
+    }
+
+    .inner-hero .scroll-icon i {
+        font-size: 14px;
+    }
+
+}
+@media (max-width: 768px) {
+    @keyframes bounce {
+        0%, 100% { transform: translate(-50%, 0); }
+        50% { transform: translate(-50%, 6px); }
+    }
+}

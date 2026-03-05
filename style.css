@@ -1,0 +1,2165 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+
+/* ================= MEGA MENU ================= */
+
+.dropdown{
+    position:relative;
+}
+
+/* Açılır Alan */
+.mega-menu{
+    position:absolute;
+    top:100%;
+    left: -118px;;                /* SOLA YASLANDI */
+    width:780px;
+    background:#ffffff;
+    padding:40px 50px;
+    display:flex;
+    justify-content:space-between;
+    gap:60px;
+    box-shadow:0 25px 50px rgba(0,0,0,0.12);
+    border-radius:16px;
+    opacity:0;
+    visibility:hidden;
+    transition:all 0.3s ease;
+    z-index:5000;
+    transform:translateY(10px);
+}
+.mega-menu::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:url("images/bosch-strip.png") center/cover;
+}
+
+
+/* Hover ile açılma */
+.dropdown:hover .mega-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* Sütun */
+.mega-column{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    width:33%;              /* 3 eşit sütun */
+}
+
+/* Linkler */
+.mega-column a{
+    text-decoration:none;
+    color:#333;
+    font-size:15px;
+    line-height:1.5;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    transition:0.3s ease;
+    white-space:normal;
+    word-break:break-word;  /* uzun kelime taşmasını engeller */
+}
+
+/* Ok işareti */
+.mega-column a::before{
+    content:"›";
+    font-size:16px;
+    color:#bbb;
+    transition:0.3s ease;
+}
+
+/* Hover */
+.mega-column a:hover{
+    color:#e20015;
+    transform:translateX(6px);
+}
+
+.mega-column a:hover::before{
+    color:#e20015;
+}
+
+/* ================= HEADER ================= */
+
+.main-header{
+    position: fixed;   /* sticky yerine fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+}
+
+
+
+/* BOSCH ŞERİT */
+.top-strip{
+    width:100%;
+    height:6px;
+    background:url("images/bosch-strip.png") center/cover no-repeat;
+    transition:height 0.3s ease;
+}
+
+/* İç Alan */
+.header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+    transition:padding 0.3s ease;
+}
+
+/* Scroll Olduğunda */
+.main-header.scrolled .header-inner{
+    padding:12px 0;
+}
+
+.main-header.scrolled .top-strip{
+    height:6px; /* Şerit sabit kalıyor, ters büyüme yok */
+}
+
+.logo-link{
+    text-decoration:none;
+    color:inherit;
+    display:inline-block;
+}
+
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-left:0;
+    padding-left:0;
+}
+
+.logo-area img{
+    height:50px;
+}
+
+.brand-text{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.divider {
+    width: 1px;
+    height: 28px;
+    background: #ddd;
+    margin-left: 14px;
+    margin-right: 4px;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#e20015;
+}
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* ================= HERO ================= */
+
+
+
+
+
+
+
+/* ================= BOSCH KATEGORİLER ================= */
+
+.bosch-categories{
+    padding:120px 0;
+    background:#ffffff;
+    text-align:center;
+}
+
+.bosch-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.bosch-card{
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    text-decoration:none;
+    color:#fff;
+    height:230px;
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+    transition:0.4s ease;
+}
+
+.bosch-card img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
+}
+
+.bosch-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+}
+
+.bosch-card span{
+    position:relative;
+    z-index:2;
+    font-size:18px;
+    font-weight:600;
+}
+
+.bosch-card:hover img{
+    transform:scale(1.1);
+}
+
+.bosch-card:hover{
+    transform:translateY(-8px);
+}
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s cubic-bezier(.2,.65,.3,1);
+}
+
+.fade-in.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= TV BRANDS ================= */
+
+.tv-brands{
+    padding:120px 0;
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.tv-description{
+    margin-top:20px;
+    color:#555;
+    font-size:16px;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.tv-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+}
+
+.tv-card{
+    background:#ffffff;
+    padding:40px;
+    border-radius:18px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    height:200px;
+    overflow:hidden;
+}
+
+.tv-card img{
+    width:100%;
+    height:100%;
+    object-fit:contain;   /* Oranı bozmadan doldurur */
+    transition:0.3s ease;
+}
+
+/* Hover sadece hafif yükselme */
+
+.tv-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.1);
+}
+
+
+
+/* ================= FEATURES ================= */
+
+.features{
+    padding:80px 0;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.feature-card{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    transition:0.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+
+.feature-card h3{
+    color:#e20015;
+    margin-bottom:15px;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience{
+    padding:100px 0;
+    background:#ffffff;
+}
+
+.experience-container{
+    display:flex;
+    gap:60px;
+    align-items:center;
+}
+
+.experience-text{
+    flex:1;
+}
+
+.experience-text h2{
+    font-size:36px;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.experience-text h2::after{
+    content:"";
+    width:60px;
+    height:4px;
+    background:#e20015;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+}
+
+.experience-text p{
+    line-height:1.7;
+    color:#444;
+}
+
+.experience-images{
+    flex:1;
+    display:flex;
+    gap:25px;
+}
+
+.image-box{
+    width:50%;
+    height:420px;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:0.4s ease;
+}
+
+.image-box:hover img{
+    transform:scale(1.05);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+    padding:80px 0;
+}
+
+.contact-container{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.contact-info{
+    flex:1;
+}
+
+.contact-info h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.contact-map{
+    flex:1;
+}
+
+.contact-map iframe{
+    width:100%;
+    height:350px;
+    border-radius:12px;
+    border:none;
+}
+
+/* ================= FOOTER ================= */
+.footer-columns{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:60px;
+    padding:60px 0;
+}
+
+.footer-col h4{
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.footer-col a{
+    display:block;
+    margin-bottom:10px;
+    text-decoration:none;
+    color:#555;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-col a:hover{
+    color:#e20015;
+}
+
+.footer-col p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:8px;
+}
+
+
+
+.site-footer{
+    position:relative;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+/* Silik Arka Logo */
+.footer-bg{
+    position:absolute;
+    inset:0;
+    background:url("images/logo.png") center/contain no-repeat;
+
+    opacity:0.04;
+    pointer-events:none;
+}
+
+/* Üst Alan */
+.footer-top{
+    padding:60px 0 40px 0;
+    position:relative;
+    z-index:2;
+}
+
+.footer-left h3{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.footer-left p{
+    margin:5px 0;
+    color:#555;
+}
+
+/* ================= ALT ORTALI BÖLÜM ================= */
+html{
+    scroll-behavior:smooth;
+}
+section{
+    scroll-margin-top:120px;
+}
+
+.footer-bottom{
+    border-top:1px solid #ddd;
+    padding:25px 0;
+    position:relative;
+    z-index:2;
+}
+
+.footer-bottom-inner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+/* Bosch Logo */
+.bosch-logo{
+    height:38px;
+}
+
+/* Telif Yazısı */
+.footer-copy{
+    font-size:13px;
+    color:#777;
+}
+
+/* AK Alan */
+.ak-wrapper{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.ak-logo{
+    height:38px;
+}
+
+.ak-text{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#777;
+}
+
+/* Alt Bosch Renkli Şerit */
+.footer-strip{
+    width:100%;
+    height:8px;
+    background:url("images/bosch-strip.png") center/cover no-repeat;
+}
+
+
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-btn{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    display:flex;
+    align-items:center;
+    background:#25D366;
+    padding:10px 18px 10px 10px;
+    border-radius:60px;
+    text-decoration:none;
+    color:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    z-index:999;
+    transition:0.3s ease;
+}
+
+.whatsapp-btn:hover{
+    transform:scale(1.05);
+}
+
+/* İkon Alanı */
+.wp-icon{
+    width:50px;
+    height:50px;
+    background:#1ebe5d;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+/* Yazı Alanı */
+.wp-text{
+    display:flex;
+    flex-direction:column;
+    margin-left:12px;
+}
+
+.wp-title{
+    font-weight:700;
+    font-size:16px;
+}
+
+.wp-sub{
+    font-size:13px;
+    opacity:0.9;
+}
+
+
+
+/* ANA VURGU */
+.main-highlight {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.highlight-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #E2001A; /* Bosch kırmızısı */
+  margin-bottom: 25px;
+}
+
+.highlight-text {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* BİZ KİMİZ */
+.about-us {
+  padding: 80px 0;
+  background: #f5f5f5;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.circle-svg {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+@media (max-width: 768px) {
+
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .circle-svg {
+        width: 90%;
+        max-width: 320px;
+        margin: 30px auto 0;
+    }
+
+}
+
+/* SVG */
+.circle-svg svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+
+
+/* Hover efekti */
+.circle-svg {
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.about-image:hover .circle-svg {
+  transform: scale(1.05) translateZ(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .circle-svg {
+    width: 280px;
+    height: 280px;
+    margin-top: 30px;
+  }
+}
+/* ===================== MOBILE SYSTEM ===================== */
+
+@media (max-width: 992px){
+
+    /* HEADER */
+    .header-inner{
+        padding:15px 0;
+    }
+
+    .logo-area{
+        gap:10px;
+    }
+
+    .logo-area img{
+        height:38px;
+    }
+
+    .brand-text{
+        font-size:18px;
+    }
+
+    
+
+    /* MENU */
+    .menu{
+        display:none;   /* hamburger yapacağız sonra */
+    }
+
+    /* HERO */
+    .hero{
+        width:100%;
+        height:480px;
+        border-radius:0;
+    }
+
+    
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-btn{
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    /* BOSCH GRID */
+    .bosch-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .bosch-card{
+        height:170px;
+        padding:15px;
+    }
+
+    .bosch-card span{
+        font-size:14px;
+    }
+
+    /* TV GRID */
+    .tv-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .tv-card{
+        height:150px;
+        padding:20px;
+    }
+
+    /* FEATURES */
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-card{
+        padding:30px;
+    }
+
+    /* EXPERIENCE */
+    .experience-container{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .experience-images{
+        flex-direction:column;
+    }
+
+    .image-box{
+        width:100%;
+        height:260px;
+    }
+
+    .experience-text h2{
+        font-size:28px;
+    }
+
+    /* CONTACT */
+    .contact-container{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .contact-map iframe{
+        height:280px;
+    }
+
+    /* FOOTER */
+    .footer-columns{
+        grid-template-columns:1fr 1fr;
+        gap:30px;
+        padding:50px 0;
+    }
+
+    .footer-bottom-inner{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .bosch-logo{
+        height:30px;
+    }
+
+    .ak-logo{
+        height:30px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-btn{
+        left:12px;
+        bottom:12px;
+        padding:8px 14px 8px 8px;
+    }
+
+    .wp-icon{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .wp-title{
+        font-size:14px;
+    }
+
+    .wp-sub{
+        font-size:11px;
+    }
+}
+@media (max-width: 600px){
+
+    .bosch-grid,
+    .tv-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-columns{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+@media (max-width: 992px){
+    .mega-menu{
+        display:none !important;
+    }
+}
+@media (max-width: 992px){
+    section{
+        scroll-margin-top:80px;
+    }
+}
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+    z-index:1100;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#111;
+    transition:0.3s ease;
+}
+
+/* X dönüşümü */
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translateY(-8px);
+}
+
+/* ================= MOBILE MENU PANEL ================= */
+
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:80%;
+    max-width:320px;
+    height:100vh;
+    background:#ffffff;
+    box-shadow:-10px 0 30px rgba(0,0,0,0.15);
+    padding:100px 30px 40px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:0.4s ease;
+    z-index:1050;
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    font-size:16px;
+}
+.mobile-menu a.active {
+    color: #e20015;
+    font-weight: 600;
+}
+
+/* Dropdown */
+.mobile-dropdown{
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile-dropbtn{
+    font-weight:600;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
+.mobile-submenu{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    padding-left:10px;
+}
+
+.mobile-dropdown.active .mobile-submenu{
+    display:flex;
+}
+
+/* ================= MOBILE BREAKPOINT ================= */
+
+@media (max-width: 992px){
+
+    .menu{
+        display:none;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+}
+.hero-badge{
+    margin-top:20px;
+    font-size:14px;
+    opacity:0.85;
+    letter-spacing:1px;
+}
+.trust-strip{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px 0;
+    font-size:14px;
+}
+
+
+/* ================= GOOGLE REVIEWS ================= */
+.google-score{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.score{
+    font-size:32px;
+    font-weight:700;
+}
+
+.stars{
+    color:#e20015;
+    letter-spacing:3px;
+}
+
+.count{
+    font-size:14px;
+    color:#777;
+}
+.reviews{
+    padding:110px 0;
+    background:#f9f9f9;
+}
+
+.reviews-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.review-card{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    transition:0.3s ease;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
+
+.review-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.review-header img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.review-header h4{
+    margin:0;
+    font-size:16px;
+}
+
+.review-header span{
+    font-size:13px;
+    color:#777;
+}
+
+.review-card p{
+    line-height:1.7;
+    color:#444;
+    font-size:15px;
+}
+
+.review-photo{
+    margin-top:20px;
+}
+
+.review-photo img{
+    width:25%;
+    border-radius:12px;
+    margin-top:10px;
+}
+@media (max-width: 992px){
+    .reviews-grid{
+        grid-template-columns:1fr;
+    }
+}
+.reviews-main-title{
+    text-align:center;
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+.reviews-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.reviews-header h2{
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.google-score{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+.score{
+    font-size:34px;
+    font-weight:700;
+}
+
+.stars{
+    color:#e20015;
+    letter-spacing:4px;
+}
+
+.count{
+    font-size:14px;
+    color:#777;
+}
+
+.google-btn{
+    display:inline-block;
+    padding:10px 22px;
+    border:1px solid #e20015;
+    border-radius:6px;
+    color:#e20015;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s ease;
+}
+
+.google-btn:hover{
+    background:#e20015;
+    color:#fff;
+}
+.google-logo{
+    height:22px;
+    margin-right:5px;
+}
+
+
+/* Genel badge tasarımı */
+.badge{
+    position:absolute;
+    background:#ffffff;
+    padding:14px 22px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    color:#111;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    opacity:0;
+}
+
+/* Sol üst */
+.badge-top{
+    top:60px;
+    left:60px;
+    animation:slideFromLeft 1.5s ease forwards;
+}
+
+/* Sağ alt */
+.badge-bottom{
+    bottom:60px;
+    right:60px;
+    animation:slideFromRight 1.5s ease forwards;
+    animation-delay:0.8s;
+}
+
+/* Bosch gradient */
+.bosch-gradient{
+    background:linear-gradient(
+        to right,
+        #e20015 0%,
+        #ff0000 25%,
+        #000000 50%,
+        #e20015 75%,
+        #ff0000 100%
+    );
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Animasyonlar */
+@keyframes slideFromLeft{
+    from{
+        transform:translateX(-80px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+@keyframes slideFromRight{
+    from{
+        transform:translateX(80px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+/* ================= PREMIUM HERO ================= */
+
+.hero{
+    display:flex;
+    justify-content:center;
+    margin-top:0px;
+}
+
+.hero-video-wrapper{
+    position:relative;
+    width:100%;
+    max-width:1400px;
+    height:650px;
+    border-radius:0px;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.65)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:0 20px;
+    z-index:2;
+    animation:heroFade 1.2s ease forwards;
+    opacity:0;
+}
+
+.hero-content h1{
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:40px;
+    opacity:0.9;
+}
+
+.bosch-highlight{
+    color:#e20015;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-btn{
+    padding:15px 34px;
+    border-radius:8px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.primary-btn{
+    background:#e20015;
+    color:#fff;
+}
+
+.primary-btn:hover{
+    background:#b80012;
+    transform:translateY(-3px);
+}
+
+.secondary-btn{
+    background:transparent;
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.secondary-btn:hover{
+    background:#fff;
+    color:#111;
+}
+
+/* Animasyon */
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= MOBILE HERO ================= */
+
+@media (max-width: 992px){
+
+    
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .hero-btn{
+        padding:12px 24px;
+        font-size:14px;
+    }
+}
+.menu a.active {
+    color: #e20015;
+    font-weight: 600;
+    position: relative;
+}
+
+.menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #e20015;
+}
+/* ================= MOBILE HEADER OPTIMIZATION ================= */
+
+@media (max-width: 768px){
+
+    .header-inner{
+        padding: 12px 0;
+    }
+
+    .logo-area{
+        gap: 8px;
+    }
+
+    .logo-area img{
+        height: 32px;   /* önce 38-50 idi */
+    }
+
+    .brand-text{
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+
+    
+
+}
+/* ================= MOBILE HEADER FIX ================= */
+
+@media (max-width: 768px){
+
+    .header-inner{
+        padding: 10px 0;
+    }
+
+    .logo-area{
+        gap: 6px;
+        align-items: center;
+    }
+
+    .logo-area img{
+        height:20px;
+    }
+
+    .brand-text{
+        font-size:12px;
+        line-height: 1.1;
+        display: flex;
+        flex-direction: column;   /* 2 SATIR GARANTİ */
+    }
+
+    .brand-text span{
+        display: block;
+    }
+
+}
+/* ================= LUXURY TRUST SECTION ================= */
+
+.trust-luxury {
+    padding: 110px 0;
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    position: relative;
+}
+
+.trust-luxury-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.trust-luxury-item {
+    flex: 1;
+    padding: 30px 20px;
+    transition: 0.4s ease;
+}
+
+.trust-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: rgba(226, 0, 21, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-icon i {
+    font-size: 28px;
+    color: #e20015;
+}
+
+.trust-luxury-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.trust-luxury-item p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.trust-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #ddd, transparent);
+}
+
+.trust-luxury-item:hover {
+    transform: translateY(-8px);
+}
+
+.trust-luxury-item:hover .trust-icon {
+    background: rgba(226, 0, 21, 0.15);
+}
+
+/* MOBILE */
+
+@media (max-width: 992px) {
+
+    .trust-luxury-inner {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .trust-divider {
+        display: none;
+    }
+}
+/* ================= SHOWROOM CTA ================= */
+
+.showroom-cta{
+    padding:120px 0;
+    background:#111;
+    color:#fff;
+    text-align:center;
+}
+
+.showroom-text h2{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.showroom-text p{
+    max-width:650px;
+    margin:0 auto 40px;
+    line-height:1.7;
+    opacity:0.85;
+}
+
+.showroom-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.showroom-btn{
+    padding:14px 34px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.showroom-btn.primary{
+    background:#e20015;
+    color:#fff;
+}
+
+.showroom-btn.primary:hover{
+    background:#b80012;
+}
+
+.showroom-btn.secondary{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.showroom-btn.secondary:hover{
+    background:#fff;
+    color:#111;
+}
+/* ================= STATS BAND ================= */
+
+.stats-band{
+    padding:90px 0;
+    background:#f7f7f7;
+}
+
+.stats-inner{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    flex-wrap:wrap;
+}
+
+.stat-item h3{
+    font-size:42px;
+    color:#e20015;
+    margin-bottom:10px;
+}
+
+.stat-item p{
+    color:#555;
+    font-size:15px;
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 22px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+.scroll-indicator span::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollAnim 1.8s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { opacity: 0; top: 6px; }
+    50% { opacity: 1; }
+    100% { opacity: 0; top: 18px; }
+}
+/* ================= KAMPANYALAR ================= */
+
+.campaigns {
+    padding: 110px 0;
+    background: #f9f9f9;
+}
+
+.campaign-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.campaign-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.campaign-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.campaign-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.campaign-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.campaign-card img {
+    width: 100%;
+    height: auto;
+    max-height: 310px;   /* çok uzamasın */
+    object-fit: cover;
+    display: block;
+}
+
+.campaign-content {
+    padding: 25px;
+}
+
+.campaign-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.campaign-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.campaign-content span {
+    font-size: 12px;
+    color: #999;
+}
+
+/* MOBILE */
+
+@media (max-width: 992px) {
+    .campaign-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= KAMPANYA BADGE ================= */
+
+.campaign-card {
+    position: relative;
+}
+
+.campaign-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #e20015;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.logo-area img:last-child {
+    margin-left: 22px; /* Bosch logosunu sağa iter */
+}
+.campaign-cta{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#e20015;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    border-radius:6px;
+    transition:0.3s ease;
+}
+
+.campaign-cta:hover{
+    background:#b80012;
+    transform:translateY(-2px);
+}
+.reviews-slider{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+}
+
+.review-card{
+    min-width:320px;
+    scroll-snap-align:start;
+}
+.consultation{
+    padding:100px 0;
+    background:#111;
+    color:#fff;
+    text-align:center;
+}
+
+.consultation h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.consultation p{
+    max-width:600px;
+    margin:0 auto 35px;
+    opacity:0.85;
+}
+
+.consultation-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.consult-btn{
+    padding:12px 28px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.consult-btn.primary{
+    background:#e20015;
+    color:#fff;
+}
+
+.consult-btn.primary:hover{
+    background:#b80012;
+}
+
+.consult-btn.secondary{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.consult-btn.secondary:hover{
+    background:#fff;
+    color:#111;
+}
+@media (max-width: 992px){
+
+    .experience-text h2{
+        text-align:center;
+    }
+
+    .experience-text h2::after{
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+}
+/* ================= INSTAGRAM CLEAN ================= */
+
+.instagram-section {
+    padding: 110px 0;
+    background: #f4f4f4;
+}
+
+.instagram-wrapper {
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* PROFIL */
+
+.instagram-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.insta-profile-pic {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.insta-profile-info {
+    flex: 1;
+}
+
+.insta-profile-info h3 {
+    margin-bottom: 4px;
+}
+
+.insta-profile-info span {
+    font-size: 14px;
+    color: #777;
+}
+
+.insta-profile-info p {
+    font-size: 13px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.insta-follow-btn {
+    padding: 10px 22px;
+    background: #e20015;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.insta-follow-btn:hover {
+    background: #b80012;
+}
+
+/* GRID */
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.instagram-card {
+    padding: 4px;
+    background: #fff;
+}
+
+.instagram-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-card:hover img {
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .instagram-wrapper {
+        padding: 25px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .insta-profile-pic {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+.instagram-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+@media (max-width: 768px){
+
+    .experience-images{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .image-box{
+        width: 100%;
+        height: 220px;
+    }
+
+}
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+}
+/* ================= CONTACT PHONE ICON ================= */
+
+.contact-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.contact-phone i {
+    background: #e20015;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.contact-phone a {
+    text-decoration: none;
+    color: #111;
+}
+
+.contact-phone a:visited,
+.contact-phone a:hover,
+.contact-phone a:active {
+    color: #111;
+    text-decoration: none;
+}
+/* Varsayılan: mobil video gizli */
+.mobile-video {
+    display: none;
+}
+
+/* ================= MOBILE HERO ABSOLUTE RESET ================= */
+
+@media (max-width: 768px){
+
+    .desktop-video{
+        display:none;
+    }
+
+    /* HERO VIDEO ABSOLUTE İPTAL */
+    .hero-video{
+        position:relative !important;
+        inset:auto !important;
+        width:100%;
+        height:auto !important;
+        object-fit:contain !important;
+    }
+
+    .mobile-video{
+        display:block;
+    }
+
+    .hero-video-wrapper{
+        height:auto;
+        background:#000;
+    }
+.hero{
+    height:auto !important;
+}
+}
+.stats-band{
+    padding:110px 0;
+    background:#f7f7f7;
+}
+
+.stats-inner{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    flex-wrap:wrap;
+    gap:60px;
+}
+
+.stat-item h3{
+    font-size:48px;
+    font-weight:700;
+    color:#e20015;
+}
+
+.stat-item p{
+    margin-top:12px;
+    color:#555;
+    font-size:15px;
+}
+
+/* Mobil */
+@media (max-width:768px){
+    .stats-inner{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .stat-item h3{
+        font-size:38px;
+    }
+}
+.dowry-section{
+    padding:110px 0;
+    background:#ffffff;
+}
+
+.dowry-inner{
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.dowry-text{
+    flex:1;
+}
+
+.dowry-text h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.dowry-text p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.dowry-features{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:30px;
+    color:#444;
+    font-size:15px;
+}
+
+.dowry-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.dowry-btn{
+    padding:12px 28px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.dowry-btn.primary{
+    background:#e20015;
+    color:#fff;
+}
+
+.dowry-btn.primary:hover{
+    background:#b80012;
+}
+
+.dowry-btn.secondary{
+    border:2px solid #e20015;
+    color:#e20015;
+}
+
+.dowry-btn.secondary:hover{
+    background:#e20015;
+    color:#fff;
+}
+
+.dowry-image{
+    flex:1;
+}
+
+.dowry-image img{
+    width:50%;
+    border-radius:16px;
+}
+
+/* MOBILE */
+@media (max-width:992px){
+    .dowry-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .dowry-features{
+        align-items:center;
+    }
+
+    .dowry-buttons{
+        justify-content:center;
+    }
+}
+.section-line{
+    width:60px;
+    height:3px;
+    background:#e20015;
+    margin:18px 0 25px 0;
+}
+@media (max-width:992px){
+    .section-line{
+        margin:18px auto 25px auto;
+    }
+}
+.seo-location{
+    margin-top:20px;
+    font-size:13px;
+    color:#777;
+    line-height:1.6;
+    text-align:center;
+}
