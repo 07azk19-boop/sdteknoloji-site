@@ -843,8 +843,9 @@ section{
     }
 
     .contact-map iframe{
-        height:280px;
-    }
+    width:100%;
+    height:350px;
+}
 
     /* FOOTER */
     .footer-columns{
