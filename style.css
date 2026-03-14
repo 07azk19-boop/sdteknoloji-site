@@ -2177,10 +2177,12 @@ grid-column:2;
 }
 
 .seo-location{
-grid-column:1 / -1;
-margin-top:20px;
+margin-top:30px;
 font-size:13px;
 color:#777;
 line-height:1.6;
 text-align:center;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
 }
