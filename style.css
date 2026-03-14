@@ -422,11 +422,7 @@ html, body {
     padding:80px 0;
 }
 
-.contact-container{
-    display:flex;
-    gap:50px;
-    align-items:center;
-}
+
 
 .contact-info{
     flex:1;
@@ -2167,14 +2163,24 @@ section{
 
 .contact-container{
 display:grid;
-grid-template-columns:300px 1fr;
+grid-template-columns:320px 1fr;
 gap:40px;
 align-items:start;
+}
+
+.contact-info{
+grid-column:1;
+}
+
+.contact-map{
+grid-column:2;
 }
 
 .seo-location{
 grid-column:1 / -1;
 margin-top:20px;
-color:#555;
+font-size:13px;
+color:#777;
 line-height:1.6;
+text-align:center;
 }
